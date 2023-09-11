@@ -15,15 +15,14 @@
   let ostr = ""
   for(let i = 0; i<astr.length; i++){
     if(astr[i].match('[a-z]')){
-      ostr += "_ ";
+      ostr += "_";
     }
     else{
       ostr += astr[i];
     }
   }
-  let out = ostr.toString();
 </script>
 
 <div>
-  {out}
+  {ostr}
 </div>
