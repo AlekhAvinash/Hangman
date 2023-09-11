@@ -1,16 +1,16 @@
 <script lang="ts">
   import Table from "./lib/Table.svelte"
   import Word from "./lib/Word.svelte"
+  let word
 </script>
 
 <main>
-  <Word istr={"FIRE PALACE"}/>
-  <Table />
+  <Word istr={"FIRE PALACE"} bind:this={word}/>
+  <Table ele={word}/>
 </main>
 
 <style>
-html {
-    background: url(https://i.postimg.cc/PfQtGp0R/home-img.jpg) no-repeat center fixed;
-    background-size: cover;
+main {
+  background-color: var(--bs-dark);
 }
 </style>

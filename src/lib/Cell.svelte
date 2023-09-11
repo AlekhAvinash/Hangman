@@ -1,8 +1,10 @@
 <script>
   export let key = "";
+  export let ele
   let visible = true;
   function toggleVissible() {
     visible = !visible
+    ele.update(key)
   }
 </script>
 
