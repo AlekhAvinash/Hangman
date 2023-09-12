@@ -3,8 +3,11 @@
   export const update = (inp) => {
     if(inp in chLt)
       chLt[inp] = false
+    else
+      return false
     fill()
     checkWinner()
+    return true
   }
 
   let chLt = {};

@@ -2,9 +2,10 @@
   export let key = "";
   export let ele
   let visible = true;
+  let out = true
   function toggleVissible() {
     visible = !visible
-    ele.update(key)
+    out = ele.update(key)
   }
 </script>
 
@@ -17,7 +18,7 @@
   </button>
 {:else}
   <tr
-    class="btn btn-outline-success disabled"
+    class="btn btn-outline-{out? 'success' : 'danger'} disabled"
   >
     {key.toUpperCase()}
   </tr>
