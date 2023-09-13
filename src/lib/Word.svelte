@@ -1,5 +1,9 @@
 <script>
-  export let istr = ""
+  let chLt = {}
+  let ostr = ""
+  let astr = []
+
+
   export const update = (inp) => {
     if(inp in chLt)
       chLt[inp] = false
@@ -9,15 +13,17 @@
     checkWinner()
     return true
   }
+  
 
-  let chLt = {};
-  
-  let astr = istr.toLowerCase().split("");
-  for(let i = 0; i<astr.length; i++)
-    if(astr[i].match('[a-z]') && !(astr[i] in chLt))
-      chLt[astr[i]] = true
-  
-  let ostr = "-"
+  export const start = (inp) => {
+    astr = inp.toLowerCase().split("")
+    for(let i = 0; i<astr.length; i++)
+      if(astr[i].match('[a-z]') && !(astr[i] in chLt))
+        chLt[astr[i]] = true
+    fill();
+  }
+
+
   function fill(){
     ostr = ""
     for(let i = 0; i<astr.length; i++)
@@ -26,6 +32,7 @@
       else
         ostr += astr[i];
   }
+
 
   function checkWinner(){
     let retr = true
@@ -36,7 +43,9 @@
       ostr = "Winner!"
 
   }
-  fill();
+
+
+  start("FIRE PALACE")
 </script>
 
 <div class="text-light d-flex justify-content-center fs-1 word">

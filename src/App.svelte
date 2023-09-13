@@ -5,7 +5,7 @@
 </script>
 
 <main>
-  <Word istr={"FIRE PALACE"} bind:this={word}/>
+  <Word bind:this={word}/>
   <Table ele={word}/>
 </main>
 
